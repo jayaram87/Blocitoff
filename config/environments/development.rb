@@ -38,4 +38,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  config.action_mailer.default_url_options = { host: 'https://github-checkpoint-jayaram87.c9users.io/' }
+  
+  config.action_mailer.delivery_method = :smtp
+          config.action_mailer.smtp_settings = {
+            :user_name => '70c9c5c07a3067',
+            :password => '217761a3990a2e',
+            :address => 'mailtrap.io',
+            :domain => 'mailtrap.io',
+            :port => '2525',
+            :authentication => :cram_md5
+ }
 end
