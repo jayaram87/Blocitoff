@@ -28,10 +28,12 @@ gem 'bootstrap-sass'
 
 group :development do
   gem 'sqlite3'
+  gem 'faker'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'faker'
 end
 
 group :production do
