@@ -1,0 +1,5 @@
+<div class="col-md-4">
+   <h4>Hello User: <%= @user.email %></h4>
+   <%= render partial: 'items/item' %>
+   <%= link_to "Create Item", new_user_item_path(@user), class: 'btn btn-success' %>
+</div>

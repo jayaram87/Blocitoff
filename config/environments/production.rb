@@ -76,4 +76,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  config.action_mailer.default_url_options = { host: 'https://vast-island-51207.herokuapp.com' }
+  
+  config.action_mailer.delivery_method = :smtp
+          config.action_mailer.smtp_settings = {
+            :user_name => 'f16dac5921a637',
+            :password => 'e27eedeefe05be',
+            :address => 'mailtrap.io',
+            :domain => 'mailtrap.io',
+            :port => '2525',
+            :authentication => :cram_md5
+          }
 end

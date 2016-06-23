@@ -1,0 +1,4 @@
+<% all_items.each do |f| %>
+    <p><%= f.name %>
+    <small> <class="time"> created at <%= time_ago_in_words(f.created_at) %></small></class></p>
+<% end %>
