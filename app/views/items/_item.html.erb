@@ -1,6 +1,11 @@
 <% if user == current_user %>
-    <% all_items.each do |f| %>
-        <p><%= f.name %>
-        <small> <class="time"> created at <%= time_ago_in_words(f.created_at) %></small></class></p>
+    <% all_items.each do |item| %>
+        <table>
+            <tr>
+                <td><p><%= item.name %></td>
+                <td><small> <class="time"> created at <%= time_ago_in_words(item.created_at) %></small></class></td></p>
+                <div class="item"><td> <%= link_to "", [user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> </td></div>
+            </tr>
+        </table>
     <% end %>
 <% end %>

@@ -9,23 +9,6 @@ RSpec.describe ItemsController, type: :controller do
         sign_in my_user
     end
     
-    describe "GET new" do
-        it "returns http sucesss" do
-            get :new, id: my_item.id, user_id: my_user.id
-            expect(response).to have_http_status(:success)
-        end
-        
-        it "renders the #new view" do
-            get :new, id: my_item.id, user_id: my_user.id
-            expect(response).to render_template :new
-        end
-        
-        it "instantiates @item" do
-            get :new, id: my_item.id, user_id: my_user.id
-            expect(assigns(:item)).not_to be_nil
-        end
-    end
-    
     describe "POST create" do
         it "increases the number of items by 1" do
             expect{ post :create, id: my_item.id, item: {name: "Arsenal"} }.to change(Item,:count).by(1)
