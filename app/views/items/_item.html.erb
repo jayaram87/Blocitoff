@@ -1,11 +1,13 @@
 <% if user == current_user %>
     <% user.items.each do |item| %>
+        <div class="item", id=<%= "item-#{item.id}"%>>
         <table>
             <tr>
                 <td><%= item.name %></td>
                 <td><small> <div class="time"> created at <%= time_ago_in_words(item.created_at) %></small></div></td>
-                <td> <div class="item"><%= link_to "", [user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> </div></td>
+                <td><%= link_to "", [user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> </td>
             </tr>
         </table>
+        </div>
     <% end %>
 <% end %>

@@ -11,16 +11,16 @@ RSpec.describe ItemsController, type: :controller do
     
     describe "POST create" do
         it "increases the number of items by 1" do
-            expect{ post :create, id: my_item.id, item: {name: "Arsenal"} }.to change(Item,:count).by(1)
+            expect{ post :create, user_id: my_user.id, item: {name: "Arsenal"} }.to change(Item,:count).by(1)
         end
 
         it "assigns the new item to @item" do
-            post :create, id: my_item.id, item: {name: "Arsenal"}
+            post :create, user_id: my_user.id, item: {name: "Arsenal"}
             expect(assigns(:item)).to eq Item.last
         end
 
         it "redirects to the user #show view" do
-            post :create, id: my_item.id, item: {name: "Arsenal"}
+            post :create, user_id: my_user.id, item: {name: "Arsenal"}
             expect(response).to redirect_to [my_user]
         end
   end
