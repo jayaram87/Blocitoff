@@ -4,7 +4,7 @@
         <table>
             <tr>
                 <td><%= item.name %></td>
-                <td><small> <div class="time"> created at <%= time_ago_in_words(item.created_at) %></small></div></td>
+                <td><small> <div class="time"> created <%= time_remaining_to_delete_item(item.created_at, Time.now) %> ago </small></div></td>
                 <td><%= link_to "", [user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> </td>
             </tr>
         </table>
