@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
     
-    let(:my_user) { User.create!(email: "jayaramraja1987@gmail.com", password: "123456", password_confirmation: "123456") }
+    let(:my_user) { User.create!(email: "jayaramraja1987@gmail.com", password: "123456", password_confirmation: "123456", confirmed_at: Time.now) }
     let(:my_item) { Item.create!(name: "jayaramraja1987", user: my_user) }
     
     before :each do
